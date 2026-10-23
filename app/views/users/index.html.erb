@@ -1,0 +1,13 @@
+<h1>ユーザー一覧</h1>
+
+<p><%= link_to "ツイート一覧（トップ）へ戻る", tweets_path %></p>
+<p><%= link_to "新規ユーザー登録", new_user_path %></p>
+
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <%= user.uid %>
+      <%= link_to "削除", user_path(user), data: { turbo_method: :delete } %>
+    </li>
+  <% end %>
+</ul>

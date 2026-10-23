@@ -1,0 +1,15 @@
+<h1><%= @user.uid %> さんのプロフィール</h1>
+
+<% if @profile %>
+  <p>メッセージ: <%= @profile.message %></p>
+  <% if session[:login_uid] == @user.uid %>
+    <p><%= link_to "プロフィールを編集", edit_profile_path(@profile) %></p>
+  <% end %>
+<% else %>
+  <p>プロフィールは未設定です。</p>
+  <% if session[:login_uid] == @user.uid %>
+    <p><%= link_to "プロフィールを作成", new_profile_path %></p>
+  <% end %>
+<% end %>
+
+<p><%= link_to "ツイート一覧に戻る", tweets_path %></p>

@@ -1,0 +1,11 @@
+<h1>プロフィール作成</h1>
+
+<%= form_with model: @profile do |f| %>
+  <p>
+    <%= f.label :message, "自己紹介メッセージ" %><br>
+    <%= f.text_field :message %>
+  </p>
+  <p>
+    <%= f.submit "登録" %>
+  </p>
+<% end %>
